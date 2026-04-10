@@ -15,7 +15,6 @@
         .navbar { background: rgba(0,0,0,0.95); border-bottom: 2px solid var(--gold); }
         .product-title { font-family: 'Bebas Neue'; color: var(--gold); font-size: 3rem; letter-spacing: 2px; }
 
-        /* Estilo de la línea amarilla animada para el menú */
         .nav-link-custom {
             color: #fff !important;
             text-decoration: none;
@@ -29,7 +28,6 @@
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
 
-        /* Animación Pulso para Reservar */
         @keyframes pulse-gold {
             0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
             70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
@@ -53,18 +51,13 @@
             transform: scale(1.05);
         }
 
-        /* Ajuste móvil */
-        @media (max-width: 991px) {
-            .navbar-nav {
-                flex-direction: row !important;
-                justify-content: center;
-                gap: 15px;
-                padding: 10px 0;
-            }
-            .nav-link-custom { font-size: 0.85rem; }
+        .nav-custom-flow {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 15px;
         }
         
-        /* Estilo de Tarjetas */
         .card-producto {
             background: #111;
             border: 1px solid #333;
@@ -89,7 +82,6 @@
         }
         .btn-whatsapp:hover { background-color: #fff; color: #000; }
 
-        /* Botón Volver */
         .btn-volver {
             color: #fff !important;
             font-weight: bold;
@@ -103,29 +95,30 @@
             border-color: #fff;
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
         }
+
+        @media (max-width: 576px) {
+            .navbar-brand { font-size: 1.2rem !important; }
+            .nav-link-custom { font-size: 0.75rem; }
+            .btn-reservar-anim { padding: 6px 15px; font-size: 0.75rem; }
+            .nav-custom-flow { gap: 10px; }
+        }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
+    <nav class="navbar navbar-dark sticky-top">
+        <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand fs-2" href="index.html" style="font-family: 'Bebas Neue';">ROD'S <span style="color: var(--gold);">BARBERIA</span></a>
             
-            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item me-3">
-                        <a class="nav-link-custom fw-bold" href="servicios.html">SERVICIOS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn-reservar-anim fw-bold px-4" href="https://wa.me/527712381936">RESERVAR</a>
-                    </li>
-                </ul>
+            <div class="nav-custom-flow">
+                <a class="nav-link-custom fw-bold" href="servicios.html">SERVICIOS</a>
+                <a class="btn-reservar-anim fw-bold" href="https://wa.me/527712381936?text=Hola,%20quiero%20agendar%20una%20cita">RESERVAR</a>
             </div>
         </div>
     </nav>
 
     <div class="container py-5 text-center">
-        <h1 class="product-title mb-5">PRODUCTOS</h1>
+        <h1 class="product-title mb-5">PRODUCTOS PREMIUM PARA TU ESTILO🔥</h1>
         
         <div class="row g-4">
             <div class="col-6 col-md-3">
@@ -135,8 +128,8 @@
                     </div>
                     <div class="p-3">
                         <h6 class="fw-bold">CERAS NISHMAN</h6>
-                        <p class="small text-secondary">Calidad Premium para peinado.</p>
-                        <a href="https://wa.me/527712381936?text=Hola! Me interesa las Ceras Nishman" class="btn-whatsapp mt-2">PREGUNTAR</a>
+                        <p class="small text-secondary">Calidad premium para peinado.</p>
+                        <a href="https://wa.me/527712381936?text=Hola!%20Me%20interesa%20comprar%20las%20Ceras%20Nishman" class="btn-whatsapp mt-2">COMPRAR</a>
                     </div>
                 </div>
             </div>
@@ -148,8 +141,8 @@
                     </div>
                     <div class="p-3">
                         <h6 class="fw-bold">CERAS BAREGK</h6>
-                        <p class="small text-secondary">Máxima fijación y estilo.</p>
-                        <a href="https://wa.me/527712381936?text=Hola! Me interesa las Ceras Baregk" class="btn-whatsapp mt-2">PREGUNTAR</a>
+                        <p class="small text-secondary">Sub marca de Nishman.</p>
+                        <a href="https://wa.me/527712381936?text=Hola!%20Me%20interesa%20comprar%20las%20Ceras%20Baregk" class="btn-whatsapp mt-2">COMPRAR</a>
                     </div>
                 </div>
             </div>
@@ -161,8 +154,8 @@
                     </div>
                     <div class="p-3">
                         <h6 class="fw-bold">RODILLO ACTIVADOR</h6>
-                        <p class="small text-secondary">Estimula el crecimiento de barba.</p>
-                        <a href="https://wa.me/527712381936?text=Hola! Me interesa el Rodillo Activador" class="btn-whatsapp mt-2">PREGUNTAR</a>
+                        <p class="small text-secondary">Para activar el crecimiento de la barba.</p>
+                        <a href="https://wa.me/527712381936?text=Hola!%20Me%20interesa%20comprar%20el%20Rodillo%20Activador" class="btn-whatsapp mt-2">COMPRAR</a>
                     </div>
                 </div>
             </div>
@@ -170,12 +163,12 @@
             <div class="col-6 col-md-3">
                 <div class="card-producto">
                     <div class="img-container">
-                        <img src="minoxidil.jpg" alt="Minoxidil">
+                        <img src="minoxidil.jpg" alt="Minoxidil Nishman">
                     </div>
                     <div class="p-3">
-                        <h6 class="fw-bold">MINOXIDIL</h6>
-                        <p class="small text-secondary">Tratamiento para barba pronunciada.</p>
-                        <a href="https://wa.me/527712381936?text=Hola! Me interesa el Minoxidil" class="btn-whatsapp mt-2">PREGUNTAR</a>
+                        <h6 class="fw-bold">MINOXIDIL NISHMAN</h6>
+                        <p class="small text-secondary">Para el crecimiento de una barba pronunciada.</p>
+                        <a href="https://wa.me/527712381936?text=Hola!%20Me%20interesa%20comprar%20el%20Minoxidil" class="btn-whatsapp mt-2">COMPRAR</a>
                     </div>
                 </div>
             </div>
@@ -185,6 +178,5 @@
             <a href="index.html" class="btn-volver">← VOLVER AL INICIO</a>
         </div>
     </div>
-
 </body>
 </html>
