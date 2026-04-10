@@ -14,7 +14,6 @@
         
         .navbar { background: rgba(0,0,0,0.95); border-bottom: 2px solid var(--gold); }
 
-        /* Línea dorada animada para links */
         .nav-link-custom {
             color: #fff !important;
             text-decoration: none;
@@ -28,7 +27,13 @@
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
 
-        /* Animación Pulso para Reservar */
+        .nav-custom-flow {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
+
         @keyframes pulse-gold {
             0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
             70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
@@ -52,15 +57,11 @@
             transform: scale(1.05);
         }
 
-        /* Ajuste móvil */
-        @media (max-width: 991px) {
-            .navbar-nav {
-                flex-direction: row !important;
-                justify-content: center;
-                gap: 15px;
-                padding: 10px 0;
-            }
-            .nav-link-custom { font-size: 0.85rem; }
+        @media (max-width: 576px) {
+            .navbar-brand { font-size: 1.2rem !important; }
+            .nav-link-custom { font-size: 0.75rem; }
+            .btn-reservar-anim { padding: 6px 15px; font-size: 0.75rem; }
+            .nav-custom-flow { gap: 10px; }
         }
 
         .service-card { 
@@ -91,19 +92,13 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand fs-2" href="index.html" style="font-family: 'Bebas Neue';">ROD'S <span style="color: var(--gold);">BARBERIA</span></a>
+    <nav class="navbar navbar-dark sticky-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand fs-2" href="index.html" style="font-family: 'Bebas Neue';">BARBERIA <span style="color: var(--gold);">ROD'S</span></a>
             
-            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item me-3">
-                        <a class="nav-link-custom fw-bold" href="productos.html">PRODUCTOS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn-reservar-anim fw-bold px-4" href="https://wa.me/527712381936?text=Hola,%20quiero%20agendar%20una%20cita">RESERVAR</a>
-                    </li>
-                </ul>
+            <div class="nav-custom-flow">
+                <a class="nav-link-custom fw-bold" href="productos.html">PRODUCTOS</a>
+                <a class="btn-reservar-anim fw-bold" href="https://wa.me/527712381936?text=Hola,%20quiero%20agendar%20una%20cita">RESERVAR</a>
             </div>
         </div>
     </nav>
