@@ -12,24 +12,39 @@
     <style>
         :root { --gold: #d4af37; --dark-bg: #0a0a0a; }
         body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-bg); color: #fff; }
+        
         .navbar { background: rgba(0,0,0,0.95); border-bottom: 2px solid var(--gold); }
+        
+        /* Ajuste para que el menú desplegable sea horizontal */
+        @media (max-width: 991px) {
+            .navbar-nav {
+                flex-direction: row !important; /* Fuerza la línea horizontal */
+                justify-content: center;
+                gap: 20px;
+                padding: 15px 0;
+            }
+        }
+
         .hero-section { 
             height: 90vh; 
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074');
             background-size: cover; background-position: center; 
             display: flex; align-items: center; justify-content: center; text-align: center;
         }
+        
         .main-logo-hero { 
             max-width: 420px; width: 85%; 
             filter: drop-shadow(0px 10px 20px rgba(212, 175, 55, 0.4));
             display: block; margin: 0 auto 30px; 
         }
+
         .btn-outline-gold { 
             border: 2px solid var(--gold); color: #fff; font-family: 'Bebas Neue'; 
             font-size: 1.5rem; letter-spacing: 2px; padding: 10px 40px;
             transition: 0.3s; text-decoration: none; display: inline-block;
         }
         .btn-outline-gold:hover { background: var(--gold); color: #000; }
+        
         .info-card { background: #111; border-left: 4px solid var(--gold); padding: 25px; border-radius: 10px; }
         .social-link { color: #fff; font-size: 2.2rem; transition: 0.3s; margin-right: 20px; text-decoration: none; }
         .social-link:hover { color: var(--gold); transform: translateY(-3px); }
@@ -40,13 +55,15 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fs-2" href="index.html" style="font-family: 'Bebas Neue';">ROD'S <span style="color: var(--gold);">BARBERIA</span></a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link text-white fw-bold me-lg-4" href="servicios.html">SERVICIOS</a>
+                        <a class="nav-link text-white fw-bold" href="servicios.html">SERVICIOS</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-warning fw-bold px-4" href="https://wa.me/527712381936" style="border-radius: 50px; color: #000;">RESERVAR</a>
@@ -70,8 +87,8 @@
                     <div class="info-card">
                         <h3 class="mb-4" style="font-family: 'Bebas Neue'; color: var(--gold);">HORARIOS</h3>
                         <ul class="list-unstyled small mb-4">
-                            <li>Lun - Mié: 10:00 a.m. – 8:00 p.m.</li>
-                            <li>Jue - Vie: 10:00 a.m. – 8:00 p.m.</li>
+                            <li>Lunes - Miércoles: 10:00 a.m. – 8:00 p.m.</li>
+                            <li>Jueves - Viernes: 10:00 a.m. – 8:00 p.m.</li>
                             <li>Sábado: 10:00 a.m. – 6:00 p.m.</li>
                             <li>Domingo: 12:00 p.m. – 5:00 p.m.</li>
                         </ul>
@@ -83,7 +100,10 @@
                 <div class="col-md-7">
                     <div style="padding: 8px; background: linear-gradient(135deg, var(--gold), #554411); border-radius: 20px;">
                         <div style="border-radius: 15px; overflow: hidden; height: 350px;">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.886326164223!2d-98.7353027!3d20.0670237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1a7a86bbd5c6f%3A0x99c8386cfc8fe900!2sBarberia%20Rod%E2%80%99S!5e0!3m2!1ses-419!2smx!4v1712700000000!5m2!1ses-419!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.886326164223!2d-98.7353027!3d20.0670237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1a7a86bbd5c6f%3A0x99c8386cfc8fe900!2sBarberia%20Rod%E2%80%99S!5e0!3m2!1ses-419!2smx!4v1712700000000!5m2!1ses-419!2smx" 
+    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+</iframe>
                         </div>
                     </div>
                 </div>
