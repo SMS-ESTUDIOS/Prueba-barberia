@@ -11,7 +11,58 @@
     <style>
         :root { --gold: #d4af37; --dark-bg: #0a0a0a; }
         body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-bg); color: #fff; }
+        
         .navbar { background: rgba(0,0,0,0.95); border-bottom: 2px solid var(--gold); }
+
+        /* Línea dorada animada para links */
+        .nav-link-custom {
+            color: #fff !important;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: 0.3s;
+            padding-bottom: 3px;
+        }
+        .nav-link-custom:hover {
+            color: var(--gold) !important;
+            border-color: var(--gold);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Animación Pulso para Reservar */
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        .btn-reservar-anim {
+            background-color: #ffc107;
+            color: #000 !important;
+            font-weight: 800;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 25px;
+            transition: 0.3s;
+            animation: pulse-gold 2s infinite;
+        }
+        .btn-reservar-anim:hover {
+            background-color: #fff;
+            animation: none;
+            transform: scale(1.05);
+        }
+
+        /* Ajuste móvil */
+        @media (max-width: 991px) {
+            .navbar-nav {
+                flex-direction: row !important;
+                justify-content: center;
+                gap: 15px;
+                padding: 10px 0;
+            }
+            .nav-link-custom { font-size: 0.85rem; }
+        }
+
         .service-card { 
             background: #161616; border: 1px solid #333; border-radius: 15px; 
             padding: 30px; height: 100%; transition: all 0.4s ease;
@@ -22,6 +73,20 @@
         }
         .gold-text { color: var(--gold); font-family: 'Bebas Neue'; letter-spacing: 2px; }
         .payment-banner { background: #111; border: 1px solid var(--gold); padding: 25px; border-radius: 15px; margin-top: 50px; }
+
+        .btn-volver {
+            color: #fff !important;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 3px;
+            transition: 0.3s;
+        }
+        .btn-volver:hover {
+            color: var(--gold) !important;
+            border-color: #fff;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -29,8 +94,16 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fs-2" href="index.html" style="font-family: 'Bebas Neue';">ROD'S <span style="color: var(--gold);">BARBERIA</span></a>
-            <div class="ms-auto">
-                <a class="btn btn-warning fw-bold px-4" href="https://wa.me/527712381936" style="border-radius: 50px; color: #000;">RESERVAR</a>
+            
+            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item me-3">
+                        <a class="nav-link-custom fw-bold" href="productos.html">PRODUCTOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn-reservar-anim fw-bold px-4" href="https://wa.me/527712381936">RESERVAR</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -38,7 +111,7 @@
     <div class="container py-5">
         <div class="text-center mb-5">
             <h1 class="display-3 gold-text">NUESTROS SERVICIOS</h1>
-            <p class="text-secondary lead">*TODOS NUESTROS SERVICIOS INCLUYEN BEBIDA DE CORTESÍA Y LIGERO MASAJE RELAJANTE</p>
+            <p class="text-secondary lead">TODOS NUESTROS SERVICIOS INCLUYEN BEBIDA DE CORTESÍA Y LIGERO MASAJE RELAJANTE</p>
         </div>
 
         <div class="row g-4">
@@ -82,7 +155,7 @@
         </div>
 
         <div class="text-center mt-5">
-            <a href="index.html" class="text-white fw-bold" style="text-decoration: none; border-bottom: 2px solid var(--gold);">← VOLVER AL INICIO</a>
+            <a href="index.html" class="btn-volver">← VOLVER AL INICIO</a>
         </div>
     </div>
 </body>
