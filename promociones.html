@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promociones 🔥 | Barbería Rod'S</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root { --gold: #d4af37; --dark-bg: #0a0a0a; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-bg); color: #fff; overflow-x: hidden;}
+        
+        /* Navbar */
+        .navbar { background: rgba(0,0,0,0.95); border-bottom: 2px solid var(--gold); padding: 15px 0; }
+        .brand-glow { text-shadow: 0 0 15px rgba(212, 175, 55, 0.7); font-family: 'Bebas Neue'; }
+        .nav-custom-flow { display: flex; flex-direction: row; align-items: center; gap: 20px; }
+        .nav-link-custom { color: #fff !important; text-decoration: none; font-size: 0.9rem; transition: 0.3s; font-weight: bold; }
+        .nav-link-custom:hover { color: var(--gold) !important; }
+
+        @keyframes pulse-gold { 
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); } 
+            70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); } 
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); } 
+        }
+
+        .btn-nav-reserva {
+            background-color: var(--gold); color: #000 !important; font-weight: 800;
+            border-radius: 50px; padding: 8px 25px; text-decoration: none;
+            animation: pulse-gold 2s infinite;
+        }
+
+        /* --- ANIMACIÓN ÉPICA DEL TÍTULO --- */
+        .header-title-wrapper { position: relative; display: inline-block; overflow: hidden; }
+        .epic-title {
+            position: relative; z-index: 2;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+            font-size: 3.5rem; color: var(--gold); font-family: 'Bebas Neue';
+        }
+
+        /* El barrido de luz */
+        .epic-title::after {
+            content: ""; position: absolute; top: 0; left: -150%;
+            width: 100%; height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            animation: initial-sweep 2s ease-in-out 1s forwards; 
+        }
+
+        @keyframes initial-sweep {
+            0% { left: -150%; }
+            100% { left: 150%; }
+        }
+
+        /* Banner y Tarjetas */
+        .banner-principal { 
+            max-width: 320px; margin: 0 auto 40px auto; 
+            border: 2px solid var(--gold); border-radius: 15px; overflow: hidden; 
+        }
+
+        .promo-card { 
+            background: #111; border: 2px solid #333; border-radius: 15px; 
+            padding: 15px; transition: 0.4s;
+        }
+        .promo-card:hover { border-color: var(--gold); transform: translateY(-8px); }
+        .promo-img-container { border: 1px solid var(--gold); border-radius: 8px; overflow: hidden; margin-bottom: 12px; }
+        .promo-img { width: 100%; height: auto; }
+
+        .btn-reservar-anim { 
+            background-color: #ffc107; color: #000 !important; font-weight: 800; 
+            border-radius: 50px; text-decoration: none; display: block; padding: 10px;
+            animation: pulse-gold 2s infinite; font-size: 0.8rem;
+        }
+
+        .btn-volver-custom {
+            color: #fff !important; text-decoration: none; font-weight: bold;
+            font-family: 'Bebas Neue'; font-size: 1.3rem;
+            border-bottom: 3px solid var(--gold); transition: 0.3s;
+        }
+
+        @media (max-width: 576px) {
+            .navbar-brand { font-size: 1.1rem !important; }
+            .nav-link-custom { font-size: 0.65rem; }
+            .btn-nav-reserva { padding: 6px 12px; font-size: 0.65rem; }
+            .nav-custom-flow { gap: 8px; }
+            .epic-title { font-size: 2.2rem !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark sticky-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand fs-2 brand-glow" href="index.html">BARBERIA <span style="color: var(--gold);">ROD'S</span></a>
+            <div class="nav-custom-flow">
+                <a class="nav-link-custom" href="servicios.html">SERVICIOS</a>
+                <a class="nav-link-custom" href="productos.html">PRODUCTOS</a>
+                <a class="btn-nav-reserva" href="https://wa.me/527712381936?text=Hola,%20quiero%20agendar%20una%20cita">RESERVAR</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4 text-center">
+        
+        <div class="animate__animated animate__fadeInDown">
+            <div class="header-title-wrapper">
+                <h1 class="epic-title">PROMOCIONES 🔥</h1>
+            </div>
+            <p class="text-secondary small text-uppercase" style="letter-spacing: 1px;">Haz clic en las imagenes para agendar por WhatsApp</p>
+        </div>
+
+        <div class="banner-principal animate__animated animate__zoomIn animate__delay-1s">
+            <img src="portada-promos.jpg" class="w-100" alt="Promociones">
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
+                <a href="https://wa.me/527712381936?text=Hola,%20vi%20la%20promo%20de%20estudiantes" style="text-decoration:none; color:inherit;">
+                    <div class="promo-card">
+                        <div class="promo-img-container"><img src="promo-martes.jpg" class="promo-img"></div>
+                        <h4 class="gold-text m-0">MARTES</h4>
+                        <p class="small text-secondary mb-2">20% OFF Estudiantes</p>
+                        <div class="btn-reservar-anim">RESERVAR</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-md-4 animate__animated animate__fadeInUp animate__delay-1s" style="animation-delay: 1.2s;">
+                <a href="https://wa.me/527712381936?text=Hola,%20quiero%20la%20promo%20del%20miércoles" style="text-decoration:none; color:inherit;">
+                    <div class="promo-card">
+                        <div class="promo-img-container"><img src="promo-miercoles.jpg" class="promo-img"></div>
+                        <h4 class="gold-text m-0">MIÉRCOLES</h4>
+                        <p class="small text-secondary mb-2">Ritual Relax X2</p>
+                        <div class="btn-reservar-anim">RESERVAR</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-10 col-md-4 animate__animated animate__fadeInUp animate__delay-1s" style="animation-delay: 1.4s;">
+                <a href="https://wa.me/527712381936?text=Hola,%20quiero%20el%20descuento%20de%20Instagram" style="text-decoration:none; color:inherit;">
+                    <div class="promo-card">
+                        <div class="promo-img-container"><img src="promo-jueves.jpg" class="promo-img"></div>
+                        <h4 class="gold-text m-0">JUEVES</h4>
+                        <p class="small text-secondary mb-2">10% OFF Instagram</p>
+                        <div class="btn-reservar-anim">RESERVAR</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-5 mb-4">
+            <a href="index.html" class="btn-volver-custom">
+                <i class="fas fa-chevron-left me-2"></i> Volver al inicio
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
