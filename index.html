@@ -11,25 +11,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         :root { --gold: #d4af37; --dark-bg: #0a0a0a; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-bg); color: #fff; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-bg); color: #fff; overflow-x: hidden; }
         
-        .navbar { background: rgba(0,0,0,0.95); border-bottom: 2px solid var(--gold); }
+        /* Navbar estandarizado */
+        .navbar { background: rgba(0,0,0,0.95); border-bottom: 2px solid var(--gold); padding: 15px 0; }
         
-        /* Estilo para los links del NAV siempre visibles */
+        .brand-glow {
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.7), 0 0 5px rgba(212, 175, 55, 0.9);
+            transition: 0.3s;
+            font-family: 'Bebas Neue';
+        }
+
         .nav-link-custom {
             color: #fff !important;
             text-decoration: none;
-            border-bottom: 2px solid transparent;
+            font-size: 0.9rem;
             transition: 0.3s;
-            padding-bottom: 3px;
+            font-weight: bold;
         }
         .nav-link-custom:hover {
             color: var(--gold) !important;
-            border-color: var(--gold);
             text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
 
-        /* Contenedor personalizado para el flujo del menú sin hamburguesa */
         .nav-custom-flow {
             display: flex;
             flex-direction: row;
@@ -54,18 +58,16 @@
             transition: 0.3s;
             animation: pulse-gold 2s infinite;
         }
-        .btn-reservar-anim:hover {
-            background-color: #fff;
-            animation: none;
-            transform: scale(1.05);
-        }
+        .btn-reservar-anim:hover { background-color: #fff; animation: none; transform: scale(1.05); }
 
-        /* Ajustes para móviles pequeños */
+        /* AJUSTES PARA CELULAR (Evita amontonamiento) */
         @media (max-width: 576px) {
-            .navbar-brand { font-size: 1.2rem !important; }
-            .nav-link-custom { font-size: 0.75rem; }
-            .btn-reservar-anim { padding: 6px 15px; font-size: 0.75rem; }
-            .nav-custom-flow { gap: 10px; }
+            .navbar { padding: 10px 0; }
+            .navbar-brand { font-size: 1.1rem !important; margin-right: 0; }
+            .nav-link-custom { font-size: 0.65rem; }
+            .btn-reservar-anim { padding: 6px 12px; font-size: 0.65rem; }
+            .nav-custom-flow { gap: 8px; }
+            .main-logo-hero { max-width: 280px; }
         }
 
         .hero-section { 
@@ -85,8 +87,9 @@
             border: 2px solid var(--gold); color: #fff; font-family: 'Bebas Neue'; 
             font-size: 1.5rem; letter-spacing: 2px; padding: 10px 40px;
             transition: 0.3s; text-decoration: none; display: inline-block;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
         }
-        .btn-outline-gold:hover { background: var(--gold); color: #000; }
+        .btn-outline-gold:hover { background: var(--gold); color: #000; box-shadow: 0 0 25px rgba(212, 175, 55, 0.5); }
         
         .info-card { background: #111; border-left: 4px solid var(--gold); padding: 25px; border-radius: 10px; }
         .social-link { color: #fff; font-size: 2.2rem; transition: 0.3s; margin-right: 20px; text-decoration: none; }
@@ -97,12 +100,15 @@
 
     <nav class="navbar navbar-dark sticky-top">
         <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand fs-2" href="index.html" style="font-family: 'Bebas Neue';">BARBERIA <span style="color: var(--gold);">ROD'S</span></a>
+            <a class="navbar-brand fs-2 brand-glow" href="index.html">
+                BARBERIA <span style="color: var(--gold);">ROD'S</span>
+            </a>
             
             <div class="nav-custom-flow">
-                <a class="nav-link-custom fw-bold" href="servicios.html">SERVICIOS</a>
-                <a class="nav-link-custom fw-bold" href="productos.html">PRODUCTOS</a>
-                <a class="btn-reservar-anim fw-bold" href="https://wa.me/527712381936?text=Hola,%20quiero%20agendar%20una%20cita">RESERVAR</a>
+                <a class="nav-link-custom" href="promociones.html">PROMOS</a>
+                <a class="nav-link-custom" href="servicios.html">SERVICIOS</a>
+                <a class="nav-link-custom" href="productos.html">PRODUCTOS</a>
+                <a class="btn-reservar-anim" href="https://wa.me/527712381936?text=Hola,%20quiero%20agendar%20una%20cita">RESERVAR</a>
             </div>
         </div>
     </nav>
@@ -110,7 +116,7 @@
     <header class="hero-section">
         <div class="container animate__animated animate__fadeIn">
             <img src="logo_rods.png" alt="Logo Rod's" class="main-logo-hero">
-            <a href="servicios.html" class="btn-outline-gold">VER MENÚ DE SERVICIOS</a>
+            <a href="servicios.html" class="btn-outline-gold animate__animated animate__fadeInUp animate__delay-1s">VER MENÚ DE SERVICIOS</a>
         </div>
     </header>
 
@@ -124,10 +130,10 @@
                             <li>Lunes - Miércoles: 10:00 a.m. – 8:00 p.m.</li>
                             <li>Jueves - Viernes: 10:00 a.m. – 8:00 p.m.</li>
                             <li>Sábado: 10:00 a.m. – 6:00 p.m.</li>
-                            <li>Domingo: 12:00 p.m. – 5:00 p.m.</li>
+                            <li>Domingo: CERRADO</li>
                         </ul>
                         <h6 class="mb-3">SÍGUENOS:</h6>
-                        <a href="https://www.instagram.com/_barberiarods?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/_barberiarods" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
                         <a href="https://wa.me/527712381936" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
@@ -135,9 +141,9 @@
                     <div style="padding: 8px; background: linear-gradient(135deg, var(--gold), #554411); border-radius: 20px;">
                         <div style="border-radius: 15px; overflow: hidden; height: 350px;">
                             <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.886326164223!2d-98.7353027!3d20.0670237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1a7a86bbd5c6f%3A0x99c8386cfc8fe900!2sBarberia%20Rod%E2%80%99S!5e0!3m2!1ses-419!2smx!4v1712700000000!5m2!1ses-419!2smx" 
-    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.886326164223!2d-98.7353027!3d20.0670237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1a7a86bbd5c6f%3A0x99c8386cfc8fe900!2sBarberia%20Rod%E2%80%99S!5e0!3m2!1ses-419!2smx!4v1712700000000!5m2!1ses-419!2smx" 
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
                         </div>
                     </div>
                 </div>
